@@ -1,0 +1,44 @@
+## Polygonal Layout Layer Arithmetics ##
+- - -
+## Ameer Abdelhadi; ameer.abdelhadi@gmail.com ##
+- - -
+
+<br><br>
+
+## SYNOPSIS: ##
+
+  Segments tree based algorithmic VLSI layout layer arithmetic operations.
+  The algorithm is based on the Segments tree algorithm for finding the contour of union of rectangles.
+  Input data contains polygons of diffusion and polysilicon in CIF format.
+  The algorithm finds intersection and relative complement of the two layers.
+  Assuming two layer, polysilion and diffusion, the algorithm finds:
+  1. Pure diffusion nodes, namely diffusion minus polysilicon. (relative complement)
+  2. Transistor gates, namely diffusion intersection with polysilicon. (intersection)
+  **LICENSE:** BSD 3-Clause ("BSD New" or "BSD Simplified") license.
+
+## USAGE: ##
+
+```
+  layerArithmetics.pl -input <CIF input file> -inter <CIF intersection output file> -pdiff <CIF pure diffusion output file>
+```
+
+## PARAMETERS: ##
+
+```
+  -input: input CIF file, contains polysilicon and diffusion layers.
+  -inter: Generated output CIF file, contains intersection between polysilicon and diffusion.
+  -pdiff: Generated output CIF file, contains pure diffusion.
+  -ps   : Plots the segments tree graph as a PostScript file.
+  >> (-input) and at least one of (-inter) and (-pdiff) are required.
+```
+
+## EXAMPLE: ##
+
+```
+  layerArithmetics.pl -input polygons.cif -inter intersection.cif -pdiff pureDiffusion.cif -ps segmentsTree.ps
+```
+
+## SUPPORT: ##
+  Ameer Abdelhadi
+  ameer.abdelhadi@gmail.com
+
